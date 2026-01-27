@@ -21,4 +21,12 @@ int main() {
     printf("Size of char: %zu Bytes\n", sizeof(c));
     printf("Size of char: %zu Bytes\n", sizeof(name));
     return 0;
+
 }
+
+   printf("Size of Int: %zu bites\n", sizeof(int));
+   printf("Size of Long: %zu bites\n", sizeof(long));
+   printf("Size of Float: %zu bites\n", sizeof(float));
+   printf("Size of double: %zu bites\n", sizeof(double));
+   printf("Size of Char: %zu bites\n", sizeof(char));
+   printf("Size of Long Long: %zu bites\n", sizeof(long long));
