@@ -9,7 +9,7 @@ int main() {
     num1 = 10, num2 = 3;
     printf("Result is: %d", num1 + num2); output: 13
     printf("Result is: %d", num1 / num2); output: 3;
-    printf("Result is: %d", num1 / num2); output: 1;
+    printf("Result is: %d", num1 % num2); output: 1;
     */
 
     /*
@@ -29,4 +29,5 @@ int main() {
     printf("The Maximum value of LONG LONG INT= %lld\n", LLONG_MIN);
     printf("The Minimum value of LONG LONG INT= %lld\n", LLONG_MIN);
     return 0;
+
 }
