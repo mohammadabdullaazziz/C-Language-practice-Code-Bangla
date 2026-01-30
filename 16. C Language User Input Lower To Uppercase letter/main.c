@@ -13,5 +13,15 @@ int main()
    scanf("%c", &lower);
    char upper = toupper(lower);
    printf("Convert your lowercase character to uppercase character in C: %c\n", upper);
+
+   // char lower = 'z';
+   // char upper = lower - 32;
+   // printf("Upper Case: %c", upper);
+
+   char lower = 'm';
+   char upper = toupper(lower);
+   printf("Upper Case: %c", upper);
    return 0;
+   
 }
+
