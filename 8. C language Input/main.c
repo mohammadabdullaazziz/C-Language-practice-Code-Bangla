@@ -175,3 +175,41 @@ int main() {
 
     return 0;
 }
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // ১. ফোন নাম্বারকে অ্যারে হিসেবে নেওয়া হয়েছে
+    char name1[30], name2[30], phone1[15], phone2[15];
+    int id1, id2;
+
+    // প্রথম ব্যক্তির তথ্য
+    printf("Enter first person name: ");
+    scanf(" %[^\n]", name1);
+    printf("Enter Id: ");
+    scanf("%d", &id1);
+    printf("Enter phone number: ");
+    scanf(" %[^\n]", phone1);
+
+    printf("---------------------\n");
+
+    // দ্বিতীয় ব্যক্তির তথ্য
+    printf("Enter second person name: ");
+    scanf(" %[^\n]", name2);
+    printf("Enter Id: "); // এই অংশটি যোগ করা হয়েছে
+    scanf("%d", &id2);
+    printf("Enter phone number: ");
+    scanf(" %[^\n]", phone2);
+
+    // চূড়ান্ত আউটপুট টেবিল আকারে
+    printf("\n----------final output-----------\n");
+    printf("%-15s %-10s %-15s\n", "Name", "Id", "Phone"); // Phone কলাম ১৫ ঘর দেওয়া হয়েছে
+    printf("-------------------------------------------\n");
+    printf("%-15s %-10d %-15s\n", name1, id1, phone1);
+    printf("%-15s %-10d %-15s\n", name2, id2, phone2);
+
+    return 0;
+}
