@@ -124,3 +124,54 @@ int main() {
 
     return 0;
 }
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[30], address[25], subject[25], phoneNumber[15], grade;
+    int age;
+    float height, cgpa;
+    double accountBalance; // বানান ঠিক করা হয়েছে (Account)
+
+    printf("Enter your name: ");
+    scanf(" %[^\n]", name); // শেষে 's' বাদ দেওয়া হয়েছে
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    printf("Enter your height: ");
+    scanf("%f", &height);
+
+    printf("Enter your address: ");
+    scanf(" %[^\n]", address);
+
+    printf("Enter your phone number: ");
+    scanf(" %[^\n]", phoneNumber);
+
+    printf("Enter your subject: ");
+    scanf(" %[^\n]", subject);
+    
+    printf("Enter your balance: ");
+    scanf("%lf", &accountBalance);
+
+    printf("Enter your grade: ");
+    scanf(" %c", &grade);
+
+    printf("Enter your cgpa: ");
+    scanf("%f", &cgpa);
+
+    printf("\n---------Your output--------------\n");
+    // প্রতিটি লাইনের শেষে \n দেওয়া হয়েছে যাতে আউটপুট সুন্দর হয়
+    printf("Your name is: %s\n", name);
+    printf("Your age is: %d\n", age);
+    printf("Your height is: %.1f\n", height);
+    printf("Your address is: %s\n", address);
+    printf("Your phone number is: %s\n", phoneNumber);
+    printf("Your subject is: %s\n", subject);
+    printf("Your Account Balance is: %.2lf\n", accountBalance); // ২ দশমিক ঘর পর্যন্ত
+    printf("Your grade is: %c\n", grade);
+    printf("Your cgpa is: %.2f\n", cgpa);
+
+    return 0;
+}
