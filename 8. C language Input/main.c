@@ -75,3 +75,52 @@ int main() {
 
     return 0;
 }
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[30], village[30], subject[25], grade;
+    int age;
+    float height, cgpa;
+
+    // ১. নাম ইনপুট
+    printf("Enter your full name: ");
+    fgets(name, sizeof(name), stdin);
+    name[strcspn(name, "\n")] = 0; // নামের শেষে থাকা Newline সরিয়ে ফেলা
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Enter your height: ");
+    scanf("%f", &height);
+
+    // বাফার ক্লিয়ার করা (scanf এর পরের Enter খেতে)
+    while (getchar() != '\n'); 
+
+    printf("Enter your village: ");
+    fgets(village, sizeof(village), stdin);
+    village[strcspn(village, "\n")] = 0; // Newline রিমুভ
+
+    printf("Enter your subject: ");
+    fgets(subject, sizeof(subject), stdin);
+    subject[strcspn(subject, "\n")] = 0; // Newline রিমুভ
+
+    printf("Enter your cgpa: ");
+    scanf("%f", &cgpa);
+
+    printf("Enter your grade: ");
+    scanf(" %c", &grade);
+
+    // ২. আউটপুট টেবিল আকারে সাজানো (আগে যা শিখেছিলে)
+    printf("\n\n%-20s %-10s %-10s %-10s\n", "Property", "Value", "Property", "Value");
+    printf("------------------------------------------------------------\n");
+    printf("%-20s: %-10s | %-10s: %d\n", "Name", name, "Age", age);
+    printf("%-20s: %-10.1f | %-10s: %s\n", "Height", height, "Village", village);
+    printf("%-20s: %-10s | %-10s: %.2f\n", "Subject", subject, "CGPA", cgpa);
+    printf("%-20s: %-10c\n", "Grade", grade);
+    printf("------------------------------------------------------------\n");
+
+    return 0;
+}
