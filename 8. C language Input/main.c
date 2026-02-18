@@ -44,4 +44,34 @@ int main()
     scanf(" %c", &grade);
     printf("Your grade is: %c\n", grade);
     return 0;
+
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // ১. ভেরিয়েবল ডিক্লেয়ারেশন এবং ইনিশিয়ালাইজেশন
+    char name[30], village[30], subject[25], grade;
+    int age;
+    float height, cgpa;
+
+    // ২. ইউজার থেকে ইনপুট নেওয়া (ভালো প্র্যাকটিস)
+    printf("Enter your name: ");
+    scanf(" %[^\n]s", name); // স্পেসসহ নাম নেওয়ার জন্য %[^\n] ব্যবহার করা হয়েছে
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Enter your CGPA: ");
+    scanf("%f", &cgpa);
+
+    // ৩. আউটপুট সুন্দর করে সাজানো (টেবিল ফরম্যাটে)
+    printf("\n--- Student Information ---\n");
+    printf("%-15s: %s\n", "Name", name);
+    printf("%-15s: %d\n", "Age", age);
+    printf("%-15s: %.2f\n", "CGPA", cgpa); // %.2f দিয়ে দশমিকের পর ২ ঘর দেখানো হয়েছে
+
+    return 0;
 }
