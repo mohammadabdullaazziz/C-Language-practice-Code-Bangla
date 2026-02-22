@@ -56,4 +56,38 @@ area = length * width;
 // Print the variables
 printf("Length is: %d\n", length);
 printf("Width is: %d\n", width);
+
 printf("Area of the rectangle is: %d", area);
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // ১. ডিক্লেয়ারেশন এবং ইনিশিয়ালাইজেশন একসাথে করা (Clean Code)
+    char name[30] = "Mohammad";
+    int age = 30; 
+    float height = 5.2f;
+    char village[] = "Changmary";
+    char subject[] = "Programming";
+    char grade = 'A';
+    float cgpa = 3.50f;
+    int num1 = 20, num2 = 30;
+    
+    strcpy(name, "Abdullah Aziz");
+
+    printf("--------- Your Profile ---------\n");
+    
+    printf("Name     : \"%s\"\n", name); // কোটেশন প্রিন্ট করার জন্য \" ব্যবহার
+    printf("Age      : %d Years\n", age);
+    printf("Height   : %.1f Feet\n", height);
+    printf("Location : %s\n", village);
+    printf("Subject  : %s\n", subject);
+    printf("Result   : Grade %c (CGPA: %.2f)\n", grade, cgpa);
+    
+    printf("--------------------------------\n");
+    printf("Numbers  : %d, %d\n", num1, num2);
+
+    return 0;
+}
