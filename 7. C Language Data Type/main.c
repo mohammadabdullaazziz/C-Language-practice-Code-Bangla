@@ -57,3 +57,83 @@ int main()
     return 0;
 }
 */
+
+
+#include <stdio.h>
+
+int main() {
+
+    char name[30] = "Abdullah Aziz";
+    int age = 30;
+    float height = 5.2;
+    char village[] = "Changmary";
+    char subject[] = "Programming";
+    char grade = 'A';
+    float cgpa = 3.50;
+    int num1 = 20, num2 = 30;
+
+    printf("--------- Your Output ---------\n");
+    printf("My name is: %s\n", name);
+    printf("My age is: %d\n", age);
+    printf("My height is: %.1f\n", height);
+    printf("My village is: %s\n", village);
+    printf("My subject is: %s\n", subject);
+    printf("My grade is: %c\n", grade);
+    printf("My cgpa is: %.2f\n", cgpa);
+    printf("Num1 is: %d and Num2 is: %d\n", num1, num2);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+
+    char name[50];
+    int age;
+    float height;
+    char village[50];
+    char subject[50];
+    char grade;
+    float cgpa;
+    int num1, num2;
+
+    printf("Enter your name: ");
+    fgets(name, sizeof(name), stdin);
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Enter your height: ");
+    scanf("%f", &height);
+
+    getchar();  // newline পরিষ্কার করার জন্য
+
+    printf("Enter your village: ");
+    fgets(village, sizeof(village), stdin);
+
+    printf("Enter your subject: ");
+    fgets(subject, sizeof(subject), stdin);
+
+    printf("Enter your grade: ");
+    scanf(" %c", &grade);
+
+    printf("Enter your CGPA: ");
+    scanf("%f", &cgpa);
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    printf("\n--------- Your Output ---------\n");
+    printf("My name is: %s", name);
+    printf("My age is: %d\n", age);
+    printf("My height is: %.1f\n", height);
+    printf("My village is: %s", village);
+    printf("My subject is: %s", subject);
+    printf("My grade is: %c\n", grade);
+    printf("My CGPA is: %.2f\n", cgpa);
+    printf("Num1 is: %d and Num2 is: %d\n", num1, num2);
+
+    return 0;
+}
