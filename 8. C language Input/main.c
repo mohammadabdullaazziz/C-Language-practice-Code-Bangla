@@ -213,3 +213,58 @@ int main() {
 
     return 0;
 }
+
+
+    #include <stdio.h>
+
+int main()
+{
+  // ১. মেমোরি অপ্টিমাইজেশন (সাইজগুলো একটু বাড়িয়ে দেওয়া নিরাপদ)
+  char name[40], address[70], subject[50], phoneNumber[20], grade;
+  int age;
+  float height, cgpa;
+  double accountBalance;
+
+  // ২. ইনপুট বাফার পরিষ্কার রাখা এবং ফরম্যাটিং
+  printf("Enter your name: ");
+  scanf(" %39[^\n]", name);
+
+  printf("Enter your age: ");
+  scanf("%d", &age);
+
+  printf("Enter your height: ");
+  scanf("%f", &height);
+
+  printf("Enter your address: ");
+  scanf(" %69[^\n]", address);
+
+  printf("Enter your phone number: ");
+  scanf(" %19[^\n]", phoneNumber);
+
+  printf("Enter your subject: ");
+  scanf(" %49[^\n]", subject);
+
+  printf("Enter your balance: ");
+  scanf("%lf", &accountBalance);
+
+  printf("Enter your grade: ");
+  scanf(" %c", &grade);
+
+  printf("Enter your cgpa: ");
+  scanf("%f", &cgpa);
+
+  printf("\n================ STUDENT PROFILE ================\n");
+  printf("%-20s : %s\n", "Name", name);
+  printf("%-20s : %d Years\n", "Age", age);
+  printf("%-20s : %.1f Feet\n", "Height", height);
+  printf("%-20s : %s\n", "Address", address);
+  printf("%-20s : %s\n", "Phone", phoneNumber);
+  printf("%-20s : %s\n", "Subject", subject);
+  printf("%-20s : $%.2lf\n", "Account Balance", accountBalance);
+  printf("%-20s : %c\n", "Grade", grade);
+  printf("%-20s : %.2f\n", "CGPA", cgpa);
+ 
+  return 0;
+}
+
+
