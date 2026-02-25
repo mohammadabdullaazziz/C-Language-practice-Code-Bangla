@@ -48,7 +48,7 @@ int main() {
     printf("%-20s %-10zu\n", "long int", sizeof(long int));
     printf("%-20s %-10zu\n", "long long int", sizeof(long long int));
     
-    printf("-------------------------------------------\n");
+    printf("-------------------------------------------\n");                                        
     printf("%-20s %-10zu\n", "float", sizeof(float));
     printf("%-20s %-10zu\n", "double", sizeof(double));
     printf("%-20s %-10zu\n", "long double", sizeof(long double));
@@ -57,6 +57,24 @@ int main() {
 
     return 0;
 }
+
+
+Data Type            Size (Bytes)
+-------------------------------------------
+char                 1
+short int            2
+int                  4
+unsigned int         4
+long int             4
+long long int        8
+-------------------------------------------
+float                4
+double               8
+long double          12
+
+
+
+
 
 
 #include <stdio.h>
@@ -133,3 +151,4 @@ Float%f%-10.2f (১০ ঘর, ২ দশমিক)Double%lf%-12.3lf (১২ ঘ
 %-10s: এটি স্ট্রিং-এর জন্য ১০টি ক্যারেক্টারের সমান জায়গা তৈরি করবে। মাইনাস (-) চিহ্ন দেওয়ার কারণে লেখাটি বাম দিক থেকে শুরু হবে (Left-aligned)।
 
 %-8d: এটি পূর্ণসংখ্যার জন্য ৮টি ক্যারেক্টারের জায়গা ছেড়ে দিবে।
+
