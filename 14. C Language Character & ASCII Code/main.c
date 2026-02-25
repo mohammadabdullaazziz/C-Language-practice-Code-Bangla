@@ -37,6 +37,15 @@
    return 0;
 }
 
+#include <stdio.h>
+
+int main() {
+    char ch = 'A';
+    printf("The ASCII value of %c is %d\n", ch, ch); 
+    // %c দিলে অক্ষর দেখাবে, %d দিলে ওই অক্ষরের সংখ্যা (ASCII code\ value) দেখাবে
+    return 0;
+}
+
 
 #include <stdio.h>
 
@@ -65,3 +74,4 @@ int main() {
 
     return 0;
 }
+
