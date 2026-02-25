@@ -21,29 +21,44 @@ int main() {
     printf("Value is b: %lld\n", b);
     */
     
-    #include <limits.h>
+   
+
+#include <stdio.h>
+#include <limits.h>
+#include <float.h>
+
+int main() {
+    // Integer Types
     printf("The Maximum value of INT = %d\n", INT_MAX);
     printf("The Minimum value of INT = %d\n", INT_MIN);
+    printf("------------------------------------------\n");
 
-    printf("The Maximum value of LONG INT= %ld\n", LONG_MAX);
-    printf("The Minimum value of LONG INT= %ld\n", LONG_MIN);
+    printf("The Maximum value of LONG INT = %ld\n", LONG_MAX);
+    printf("The Minimum value of LONG INT = %ld\n", LONG_MIN);
+    printf("------------------------------------------\n");
 
-    printf("The Maximum value of Short= %d\n", SHRT_MAX);
-    printf("The Minimum value of Short= %d\n", SHRT_MIN);
+    printf("The Maximum value of SHORT = %d\n", SHRT_MAX);
+    printf("The Minimum value of SHORT = %d\n", SHRT_MIN);
+    printf("------------------------------------------\n");
 
-    printf("The Maximum value of Char= %d\n", CHAR_MAX);
-    printf("The Minimum value of Char= %d\n", CHAR_MIN);
-    
-    printf("The Maximum value of LONG LONG INT= %lld\n", LLONG_MIN);
-    printf("The Minimum value of LONG LONG INT= %lld\n", LLONG_MIN);
-    
-    #include <float.h>
-    printf("The Maximum value of Float = %e\n", FLT_MAX);
-    printf("The Minimum value of Float = %e\n", FLT_MIN);
+    printf("The Maximum value of CHAR = %d\n", CHAR_MAX);
+    printf("The Minimum value of CHAR = %d\n", CHAR_MIN);
+    printf("------------------------------------------\n");
 
-    printf("The Maximum value of Double = %e\n", DBL_MAX);
-    printf("The Minimum value of Double = %e\n", DBL_MIN);
+    // Long Long Int 
+    printf("The Maximum value of LONG LONG INT = %lld\n", LLONG_MAX);
+    printf("The Minimum value of LONG LONG INT = %lld\n", LLONG_MIN);
+    printf("------------------------------------------\n");
+
+    // Floating Point Types
+    printf("The Maximum value of FLOAT = %e\n", FLT_MAX);
+    printf("The Minimum value of FLOAT = %e\n", FLT_MIN);
+    printf("------------------------------------------\n");
+
+    printf("The Maximum value of DOUBLE = %e\n", DBL_MAX);
+    printf("The Minimum value of DOUBLE = %e\n", DBL_MIN);
+
     return 0;
-
 }
+
 
