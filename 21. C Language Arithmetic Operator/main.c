@@ -55,3 +55,30 @@ int main()
     return 0;
 }
 
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+  
+    printf("Enter first number : ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    printf("\n--- Output Results ---\n");
+    printf("Addition      : %d + %d = %d\n", num1, num2, num1 + num2);
+    printf("Subtraction   : %d - %d = %d\n", num1, num2, num1 - num2);
+    printf("Multiplication: %d * %d = %d\n", num1, num2, num1 * num2);
+
+    // (Division by zero check)
+    if (num2 != 0) {
+        printf("Division      : %d / %d = %d\n", num1, num2, num1 / num2);
+        printf("Modulo (%%)    : %d %% %d = %d\n", num1, num2, num1 % num2);
+    } else {
+        printf("Division/Modulo: Not possible when second number is 0\n");
+    }
+
+    return 0;
+}
+
