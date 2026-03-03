@@ -313,6 +313,61 @@ int main() {
    return 0;
 }
 
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char name1[40], name2[40], phone1[20], phone2[20];
+   int id1, id2;
+
+   printf("Enter first person name: ");
+   scanf(" %[^\n]", name1);
+   
+   printf("Enter first person phone number: ");
+   scanf(" %[^\n]", phone1);
+
+   printf("Enter first person Id: ");
+   scanf("%d", &id1);
+
+   getchar();
+
+   printf("-------------------------\n");
+
+   printf("Enter second person name: ");
+   scanf(" %[^\n]", name2);
+
+   printf("Enter second person phone number: ");
+   scanf(" %[^\n]", phone2);
+
+   printf("Enter second person Id: ");
+   scanf("%d", &id2);
+   
+   getchar();
+   
+   printf("-----First Person Output---------------\n");
+
+   printf("First person name  : %s\n", name1);
+   printf("First person phone : %s\n", phone1);
+   printf("First Id           : %d\n", id1);
+
+   printf("-----Second Person Output---------------\n");
+
+   printf("Second person name  : %s\n", name2);
+   printf("Second person phone : %s\n", phone2);
+   printf("Second Id           : %d\n", id2);
+
+   return 0;
+}
+
+
+
 --------------------------------------------------------------------------------------------
 
 
@@ -378,6 +433,7 @@ int main()
  
   return 0;
 }
+
 
 
 
