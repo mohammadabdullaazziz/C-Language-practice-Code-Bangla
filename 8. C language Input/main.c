@@ -226,7 +226,7 @@ int main() {
 }
 
 
-
+---------------------------------------------------------------------------------------------------
 #include <stdio.h>
 #include <string.h>
 
@@ -262,9 +262,61 @@ int main() {
 
     return 0;
 }
+......................
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char name1[40], name2[40], phone1[20], phone2[20];
+   char id1, id2; // তুমি যেহেতু %c দিয়েছ, তাই char ব্যবহার করা হয়েছে
+
+   // --- ১ম ব্যক্তির ইনপুট ---
+   printf("Enter first person name: ");
+   fgets(name1, sizeof(name1), stdin);
+   name1[strcspn(name1, "\n")] = 0; // বাড়তি Newline মুছে ফেলা
+
+   printf("Enter first person phone number: ");
+   fgets(phone1, sizeof(phone1), stdin);
+   phone1[strcspn(phone1, "\n")] = 0;
+
+   printf("Enter first person Id: ");
+   scanf(" %c", &id1); 
+   getchar(); // scanf এর ফেলে রাখা 'Enter' বাফার থেকে পরিষ্কার করা
+
+   printf("-------------------------\n");
+
+   // --- ২য় ব্যক্তির ইনপুট ---
+   printf("Enter second person name: ");
+   fgets(name2, sizeof(name2), stdin);
+   name2[strcspn(name2, "\n")] = 0;
+
+   printf("Enter second person phone number: ");
+   fgets(phone2, sizeof(phone2), stdin);
+   phone2[strcspn(phone2, "\n")] = 0;
+
+   printf("Enter second person Id: ");
+   scanf(" %c", &id2);
+   getchar(); // বাফার পরিষ্কার করা
+
+   // --- আউটপুট ---
+   printf("\n----- First Person Output ---------------\n");
+   printf("First person name  : %s\n", name1);
+   printf("First person phone : %s\n", phone1);
+   printf("First Id           : %c\n", id1);
+
+   printf("\n----- Second Person Output ---------------\n");
+   printf("Second person name : %s\n", name2);
+   printf("Second person phone: %s\n", phone2);
+   printf("Second Id          : %c\n", id2);
+
+   return 0;
+}
+
+--------------------------------------------------------------------------------------------
 
 
-    #include <stdio.h>
+#include <stdio.h>
 
 int main()
 {
@@ -326,6 +378,7 @@ int main()
  
   return 0;
 }
+
 
 
 
