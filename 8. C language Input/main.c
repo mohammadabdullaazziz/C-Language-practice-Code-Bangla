@@ -57,9 +57,8 @@ int main() {
     int age;
     float height, cgpa;
 
-    // ২. ইউজার থেকে ইনপুট নেওয়া (ভালো প্র্যাকটিস)
     printf("Enter your name: ");
-    scanf(" %[^\n]s", name); // স্পেসসহ নাম নেওয়ার জন্য %[^\n] ব্যবহার করা হয়েছে
+    scanf(" %[^\n]", name); // স্পেসসহ নাম নেওয়ার জন্য %[^\n] ব্যবহার করা হয়েছে
 
     printf("Enter your age: ");
     scanf("%d", &age);
@@ -96,7 +95,6 @@ int main() {
     printf("Enter your height: ");
     scanf("%f", &height);
 
-    // বাফার ক্লিয়ার করা (scanf এর পরের Enter খেতে)
     while (getchar() != '\n'); 
 
     printf("Enter your village: ");
@@ -159,7 +157,11 @@ int main() {
     float height, cgpa;
     double accountBalance; //  
     printf("Enter your name: ");
-    scanf(" %[^\n]", name); // শেষে 's' বাদ দেওয়া হয়েছে আসলে scanf এ যখন তুমি %[^\n] ব্যবহার করো, তখন সেটি নিজেই একটি String Format Specifier হিসেবে কাজ করে। 
+    scanf(" %[^\n]s", name); XXXXXX
+    
+    scanf(" %[^\n]", name);
+    
+    // শেষে 's' বাদ দেওয়া হয়েছে আসলে scanf এ যখন তুমি %[^\n] ব্যবহার করো, তখন সেটি নিজেই একটি String Format Specifier হিসেবে কাজ করে। 
     
     ১. s এবং [^\n] এর কাজের পার্থক্য
     %s এর কাজ: এটি শুধু একটি শব্দ ইনপুট নেয়। যখনই এটি কোনো স্পেস (Space) পায়, তখনই ইনপুট নেওয়া বন্ধ করে দেয়। (যেমন: "Abdullah Aziz" লিখলে এটি শুধু "Abdullah" নিবে)।
@@ -287,7 +289,8 @@ int main() {
 
    printf("Enter first person Id: ");
    scanf(" %c", &id1); 
-   getchar(); // scanf এর ফেলে রাখা 'Enter' বাফার থেকে পরিষ্কার করা
+
+    while (getchar() != '\n'); 
 
    printf("-------------------------\n");
 
@@ -302,9 +305,10 @@ int main() {
 
    printf("Enter second person Id: ");
    scanf(" %c", &id2);
-   getchar(); // বাফার পরিষ্কার করা
 
-   // --- আউটপুট ---
+     while (getchar() != '\n'); 
+
+
    printf("\n----- First Person Output ---------------\n");
    printf("First person name  : %s\n", name1);
    printf("First person phone : %s\n", phone1);
@@ -317,64 +321,7 @@ int main() {
 
    return 0;
 }
-
-
-
-
-
-
-
-
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-   char name1[40], name2[40], phone1[20], phone2[20];
-   int id1, id2;
-
-   printf("Enter first person name: ");
-   scanf(" %[^\n]", name1);
-   
-   printf("Enter first person phone number: ");
-   scanf(" %[^\n]", phone1);
-
-   printf("Enter first person Id: ");
-   scanf("%d", &id1);
-
-   getchar();
-
-   printf("-------------------------\n");
-
-   printf("Enter second person name: ");
-   scanf(" %[^\n]", name2);
-
-   printf("Enter second person phone number: ");
-   scanf(" %[^\n]", phone2);
-
-   printf("Enter second person Id: ");
-   scanf("%d", &id2);
-   
-   getchar();
-   
-   printf("-----First Person Output---------------\n");
-
-   printf("First person name  : %s\n", name1);
-   printf("First person phone : %s\n", phone1);
-   printf("First Id           : %d\n", id1);
-
-   printf("-----Second Person Output---------------\n");
-
-   printf("Second person name  : %s\n", name2);
-   printf("Second person phone : %s\n", phone2);
-   printf("Second Id           : %d\n", id2);
-
-   return 0;
-}
-
-
-
 --------------------------------------------------------------------------------------------
-
 
 #include <stdio.h>
 
@@ -438,11 +385,6 @@ int main()
  
   return 0;
 }
-
-
-
-
-
 
 
 
