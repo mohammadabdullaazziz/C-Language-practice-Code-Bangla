@@ -19,7 +19,7 @@ int main() {
     // Create variables
     int num1 = 5; // Integer (whole number)
     int num2 = 10;
-    float myFloatNum = 5.99; // Floating point number
+    float myFloatNum = 5.99f; // Floating point number
     double balance = 52.125487;
     char myLetter = 'D';     // Character
     printf("Number are %d, %d\n", num1, num2);
@@ -58,33 +58,7 @@ int main()
 }
 */
 
-
-#include <stdio.h>
-
-int main() {
-
-    char name[30] = "Abdullah Aziz";
-    int age = 30;
-    float height = 5.2;
-    char village[] = "Changmary";
-    char subject[] = "Programming";
-    char grade = 'A';
-    float cgpa = 3.50;
-    int num1 = 20, num2 = 30;
-
-    printf("--------- Your Output ---------\n");
-    printf("My name is: %s\n", name);
-    printf("My age is: %d\n", age);
-    printf("My height is: %.1f\n", height);
-    printf("My village is: %s\n", village);
-    printf("My subject is: %s\n", subject);
-    printf("My grade is: %c\n", grade);
-    printf("My cgpa is: %.2f\n", cgpa);
-    printf("Num1 is: %d and Num2 is: %d\n", num1, num2);
-
-    return 0;
-}
-
+------------------------------------------------------------------------------------------
 
 #include <stdio.h>
 
@@ -137,52 +111,116 @@ int main() {
 
     return 0;
 }
+--------------- profesonal --------------
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   char name[50], village[50], subject[50], grade, phoneNumber[20];
+   int age, num1, num2;
+   float height, cgpa;
+   double accountBalance;
+
+   printf("Enter your name: ");
+   fgets(name, sizeof(name), stdin);
+   name[strcspn(name, "\n")] = 0; // নিউলাইন ক্যারেক্টার রিমুভ করা
+
+   printf("Enter your age: ");
+   scanf("%d", &age);
+
+   printf("Enter your Height: ");
+   scanf("%f", &height);
+   
+   // গুরুত্বপূর্ণ: scanf এর পর fgets ব্যবহার করলে বাফার ক্লিয়ার করতে হয়
+   while (getchar() != '\n'); 
+
+   printf("Enter your phone number: ");
+   fgets(phoneNumber, sizeof(phoneNumber), stdin);
+   phoneNumber[strcspn(phoneNumber, "\n")] = 0;
+
+   printf("Enter your village: ");
+   fgets(village, sizeof(village), stdin);
+   village[strcspn(village, "\n")] = 0;
+
+
+   printf("Enter your subject: ");
+   fgets(subject, sizeof(subject), stdin);
+   subject[strcspn(subject, "\n")] = 0;
+
+   // Grade ইনপুট (Space ব্যবহার করা হয়েছে আগের বাফার এড়াতে)
+   printf("Enter your grade: ");
+   scanf(" %c", &grade);
+
+   printf("Enter your Account Balance: ");
+   scanf("%lf", &accountBalance);
+
+   printf("Enter your cgpa: ");
+   scanf("%f", &cgpa);
+    
+   printf("Enter first integer number: ");
+   scanf("%d", &num1);
+   
+   printf("Enter second integer number: ");
+   scanf("%d", &num2);
+   
+   printf("\n----------- Student Information ---------------\n");
+   printf("Name    : \"%s\"\n", name);
+   printf("Age     : %d\n", age);
+   printf("Height  : %.2f Feet\n", height);
+   printf("Phone   : %s\n", phoneNumber);
+   printf("Village : %s\n", village);
+   printf("Subject : %s\n", subject);
+   printf("Grade   : %c\n", grade);
+   printf("Balance : %.9lf\n", accountBalance);
+   printf("CGPA    : %.2f\n", cgpa);
+   printf("Numbers : %d, %d\n", num1, num2);
+   printf("-----------------------------------------------\n");
+
+   return 0;
+}
 
 
 profesonal --------------
-    
 #include <stdio.h>
-#include <string.h> // strcspn ফাংশন ব্যবহার করার জন্য
+#include <string.h> 
 
 int main() {
     char name[50], village[50], subject[50], grade;
     int age, num1, num2;
     float height, cgpa;
 
-    // ১. নাম ইনপুট
     printf("Enter your name: ");
     fgets(name, sizeof(name), stdin);
-    name[strcspn(name, "\n")] = 0; // বাড়তি Newline মুছে ফেলার ম্যাজিক লাইন
+    name[strcspn(name, "\n")] = 0; 
 
-    // ২. বয়স ও উচ্চতা
     printf("Enter your age: ");
     scanf("%d", &age);
+    
     printf("Enter your height: ");
     scanf("%f", &height);
 
-    getchar(); // বাফার পরিষ্কার করার জন্য (পরবর্তী fgets এর জন্য জরুরি)
+    // বাফার ক্লিয়ার করা (যাতে পরের fgets ঠিকমতো কাজ করে)
+    while (getchar() != '\n'); 
 
-    // ৩. গ্রাম ইনপুট
     printf("Enter your village: ");
     fgets(village, sizeof(village), stdin);
     village[strcspn(village, "\n")] = 0;
 
-    // ৪. সাবজেক্ট ইনপুট
     printf("Enter your subject: ");
     fgets(subject, sizeof(subject), stdin);
     subject[strcspn(subject, "\n")] = 0;
 
-    // ৫. গ্রেড ও সিজিপিএ
+    গ্রেড ইনপুট (স্পেসসহ %c বাফার ক্লিন রাখে)
     printf("Enter your grade: ");
-    scanf(" %c", &grade); // ' ' স্পেসটি বাফার ক্লিয়ার রাখে
+    scanf(" %c", &grade); 
+
     printf("Enter your CGPA: ");
     scanf("%f", &cgpa);
-
-    // ৬. দুটি সংখ্যা
+    
     printf("Enter two numbers: ");
     scanf("%d %d", &num1, &num2);
-
-    // --------- ফাইনাল আউটপুট ---------
+   
     printf("\n------------- Student Profile -------------\n");
     printf("%-15s : %s\n", "Name", name);
     printf("%-15s : %d years\n", "Age", age);
