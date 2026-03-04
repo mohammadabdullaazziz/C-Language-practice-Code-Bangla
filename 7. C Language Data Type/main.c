@@ -137,3 +137,62 @@ int main() {
 
     return 0;
 }
+
+
+profesonal --------------
+    
+#include <stdio.h>
+#include <string.h> // strcspn ফাংশন ব্যবহার করার জন্য
+
+int main() {
+    char name[50], village[50], subject[50], grade;
+    int age, num1, num2;
+    float height, cgpa;
+
+    // ১. নাম ইনপুট
+    printf("Enter your name: ");
+    fgets(name, sizeof(name), stdin);
+    name[strcspn(name, "\n")] = 0; // বাড়তি Newline মুছে ফেলার ম্যাজিক লাইন
+
+    // ২. বয়স ও উচ্চতা
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("Enter your height: ");
+    scanf("%f", &height);
+
+    getchar(); // বাফার পরিষ্কার করার জন্য (পরবর্তী fgets এর জন্য জরুরি)
+
+    // ৩. গ্রাম ইনপুট
+    printf("Enter your village: ");
+    fgets(village, sizeof(village), stdin);
+    village[strcspn(village, "\n")] = 0;
+
+    // ৪. সাবজেক্ট ইনপুট
+    printf("Enter your subject: ");
+    fgets(subject, sizeof(subject), stdin);
+    subject[strcspn(subject, "\n")] = 0;
+
+    // ৫. গ্রেড ও সিজিপিএ
+    printf("Enter your grade: ");
+    scanf(" %c", &grade); // ' ' স্পেসটি বাফার ক্লিয়ার রাখে
+    printf("Enter your CGPA: ");
+    scanf("%f", &cgpa);
+
+    // ৬. দুটি সংখ্যা
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // --------- ফাইনাল আউটপুট ---------
+    printf("\n------------- Student Profile -------------\n");
+    printf("%-15s : %s\n", "Name", name);
+    printf("%-15s : %d years\n", "Age", age);
+    printf("%-15s : %.1f ft\n", "Height", height);
+    printf("%-15s : %s\n", "Village", village);
+    printf("%-15s : %s\n", "Subject", subject);
+    printf("%-15s : %c\n", "Grade", grade);
+    printf("%-15s : %.2f\n", "CGPA", cgpa);
+    printf("%-15s : %d, %d\n", "Numbers", num1, num2);
+    printf("-------------------------------------------\n");
+
+    return 0;
+}
