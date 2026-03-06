@@ -61,3 +61,37 @@ int main() {
     return 0;
 }
 
+
+
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{  //user input
+   int num1, num2, num3;
+   printf("Enter first integer number: ");
+   scanf("%d", &num1);
+   printf("Enter second integer number: ");
+   scanf("%d", &num2);
+
+   num3 = num2;
+   num2 = num1;
+   num1 = num3;
+
+   printf("Num1 = %d\n", num1);
+   printf("Num2 = %d\n", num2);
+   
+   ------------------------
+   int num1, num2, num3;
+   num1 = 10, num2 = 20;
+   printf("Num1 = %d\n", num1);
+   printf("Num2 = %d\n", num2);
+   printf("--------\n");
+   num3 = num2;
+   num2 = num1;
+   num1 = num3;
+   printf("Num1 = %d\n", num1);
+   printf("Num2 = %d\n", num2);
+   return 0;
+}
+
