@@ -105,6 +105,18 @@ Logical Operators (লজিক্যাল অপারেটর): শর্ত
     
 Bitwise Operators (বিটওয়াইজ অপারেটর): ডেটার বাইনারি লেভেলে (বিট বাই বিট) কাজ করার জন্য ব্যবহৃত হয়।
 & (Bitwise AND), | (Bitwise OR), ^ (Bitwise XOR), << (Left Shift), >> (Right Shift)।
-    
+
+Unary (-) Expression Example
+#include <stdio.h>
+
+int main() {
+    int a = 8;
+    int result = -a + 20;
+
+    printf("Result: %d\n", result);
+
+    return 0;
+}
 Assignment Operators (অ্যাসাইনমেন্ট অপারেটর): কোনো ভ্যালু চলকে জমা রাখার জন্য ব্যবহৃত হয়।
 = (সমান), +=, -=, *=, /= ইত্যাদি।
+
