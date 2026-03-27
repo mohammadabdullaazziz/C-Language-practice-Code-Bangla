@@ -46,7 +46,7 @@ int main()
     return 0;
 
 }
-
+---------------------------------------------------------------------------------------------------------
 
 #include <stdio.h>
 #include <string.h>
@@ -75,6 +75,71 @@ int main() {
     return 0;
 }
 
+
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h> 
+
+int main() {
+    char name[50], address[50], subject[30], bloodGroup[5], phoneNumber[22], grade;
+    bool married;
+    int age;
+    float height, cgpa;
+    double accountBalance;
+
+
+    printf("Enter your name: ");
+    scanf(" %[^\n]", name);
+
+    printf("Enter your address: ");
+    scanf(" %[^\n]", address);
+
+    printf("Enter your subject: ");
+    scanf(" %[^\n]", subject);
+
+    printf("Enter your bloodGroup: ");
+    scanf(" %[^\n]", bloodGroup);
+
+    printf("Enter your phone: ");
+    scanf(" %[^\n]", phoneNumber);
+
+    printf("Enter your grade: ");
+    scanf(" %c", &grade);
+
+   
+    printf("Are you married (0 or 1): ");
+    int temp;
+    scanf("%d", &temp);
+    married = temp;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Enter your height: ");
+    scanf("%f", &height);
+
+    printf("Enter your cgpa: ");
+    scanf("%f", &cgpa);
+
+    printf("Enter your accountBalance: ");
+    scanf("%lf", &accountBalance);
+
+    printf("\n--------- Student Information ----------\n");
+    printf("Name       : %s\n", name);
+    printf("Address    : %s\n", address);
+    printf("Subject    : %s\n", subject);
+    printf("Age        : %d\n", age);
+    printf("Grade      : %c\n", grade);
+    printf("Blood Group: %s\n", bloodGroup);
+    printf("Phone      : %s\n", bloodGroup);
+    printf("Married    : %s\n", married ? "Yes" : "No");
+    printf("Height     : %.1f\n", height);
+    printf("CGPA       : %.2f\n", cgpa);
+    printf("Balance    : %.10lf\n", accountBalance);
+    return 0;
+}
+--------------------------------------------------------------------------------------------
 
 #include <stdio.h>
 #include <string.h>
