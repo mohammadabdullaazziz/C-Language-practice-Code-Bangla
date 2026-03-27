@@ -1,3 +1,6 @@
+ASCII এর পূর্ণরূপ হলো American Standard Code for Information Interchange। এটি একটি ৭-বিটের কোডিং সিস্টেম (তবে কম্পিউটারে ৮-বিট হিসেবে ব্যবহৃত হয়), 
+যা মোট ১২৮টি (০ থেকে ১২৭) নির্দিষ্ট চিহ্নকে রিপ্রেজেন্ট করে।
+
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
@@ -75,3 +78,34 @@ int main() {
     return 0;
 }
 
+A - Z (Capital Letters)	65 - 90
+a - z (Small Letters)	97 - 122
+0 - 9 (Digits)	48 - 57
+Space (ফাঁকা জায়গা)	32
+New Line (\n)	10
+
+Null (\0)	0	স্ট্রিং শেষ বোঝাতে ব্যবহৃত হয় (খুবই গুরুত্বপূর্ণ)
+Tab (\t)	9	বড় ফাঁকা জায়গা (Horizontal Tab) দিতে
+Backspace (\b)	8	এক ঘর পেছনে সরতে
+Escape (ESC)	27	কোনো কমান্ড বাতিল বা মেনু থেকে বের হতে 
+
+Special Symbols (Part 1)	 33 - 47
+(যেমন: ! " # $ % & ' ( ) * + , - . / )	
+Special Symbols (Part 2)	 58 - 64
+(যেমন: : ; < = > ? @ )	
+Special Symbols (Part 3)	 91 - 96
+(যেমন: [ \ ] ^ _ ` )	
+Special Symbols (Part 4)	 123 - 126 
+
++ (Plus)	      43
+- (Minus)	   45
+* (Asterisk)	42
+/ (Slash)	   47
+= (Equal)	   61 
+
+#include <stdio.h>
+int main() {
+    char myChar = '=';
+    printf("The ASCII value of %c is %d", myChar, myChar);
+    return 0;
+}
