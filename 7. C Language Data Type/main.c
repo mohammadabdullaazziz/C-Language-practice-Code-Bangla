@@ -114,14 +114,15 @@ int main() {
 
 #include <stdio.h>
 #include <stdbool.h>
-#include <string.h> // strcspn ব্যবহারের জন্য
+#include <string.h> 
 
 int main() {
-    char name[50], address[50], subject[30], bloodGroup[5], grade;
+    char name[50], address[50], subject[30], bloodGroup[5], phoneNumber[22], grade;
     bool married;
     int age;
     float height, cgpa;
     double accountBalance;
+
 
     printf("Enter your name: ");
     fgets(name, sizeof(name), stdin);
@@ -129,17 +130,20 @@ int main() {
     printf("Enter your address: ");
     fgets(address, sizeof(address), stdin);
 
+
     printf("Enter your subject: ");
     fgets(subject, sizeof(subject), stdin);
+
+    printf("Enter your bloodGroup: ");
+    fgets(bloodGroup, sizeof(bloodGroup), stdin);
+
+    printf("Enter your phone: ");
+    fgets(phoneNumber, sizeof(phoneNumber), stdin);
 
     printf("Enter your grade: ");
     scanf(" %c", &grade); // স্পেস দিয়ে ইনপুট নিলে বাফার সমস্যা কম হয়
 
-    // এখানে একটি getchar() লাগবে কারণ উপরের scanf একটি '\n' ছেড়ে দিয়েছে
-    getchar(); 
-
-    printf("Enter your blood group: ");
-    fgets(bloodGroup, sizeof(bloodGroup), stdin);
+    getchar(); // এখানে একটি getchar() লাগবে কারণ উপরের scanf একটি '\n' ছেড়ে দিয়েছে
 
     printf("Are you married (0 or 1): ");
     int temp; // bool সরাসরি scanf এ না নিয়ে int এ নেওয়া নিরাপদ
@@ -148,10 +152,10 @@ int main() {
 
     printf("Enter your age: ");
     scanf("%d", &age);
-  
+
     printf("Enter your height: ");
     scanf("%f", &height);
-  
+
     printf("Enter your cgpa: ");
     scanf("%f", &cgpa);
 
@@ -165,13 +169,14 @@ int main() {
     printf("Age        : %d\n", age);
     printf("Grade      : %c\n", grade);
     printf("Blood Group: %s", bloodGroup);
+    printf("Phone      : %s", bloodGroup);
     printf("Married    : %s\n", married ? "Yes" : "No");
     printf("Height     : %.1f\n", height);
     printf("CGPA       : %.2f\n", cgpa);
     printf("Balance    : %.10lf\n", accountBalance);
-
     return 0;
 }
+
 
 
 --------------- profesonal --------------
