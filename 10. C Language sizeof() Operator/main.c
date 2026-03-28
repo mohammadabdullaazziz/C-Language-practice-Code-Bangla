@@ -15,6 +15,18 @@ int main() {
     printf("Size of char: %d Bytes\n", sizeof(c));
     printf("Size of char: %d Bytes\n", sizeof(name));
 
+
+
+১. অক্ষরের সংখ্যা (Characters)
+"Abdullah" শব্দটিতে মোট ৮টি অক্ষর আছে (A-b-d-u-l-l-a-h)। প্রতিটি char মেমোরিতে ১ বাইট করে জায়গা নেয়। সেই হিসেবে ৮টি অক্ষরের জন্য দরকার ৮ বাইট।
+        
+২. নাল ক্যারেক্টার (Null Character - \0)
+এটিই হলো আসল কারণ। সি ল্যাঙ্গুয়েজে যখনই কোনো স্ট্রিং লেখা হয়, কম্পাইলার নিজে থেকে সেই স্ট্রিংয়ের একদম শেষে একটি অদৃশ্য ক্যারেক্টার যোগ করে দেয়, যাকে বলা হয় Null Character (\0)।
+
+এটি স্ট্রিংয়ের সমাপ্তি বা শেষ সীমানা নির্দেশ করে।
+
+এই \0 মেমোরিতে আরও ১ বাইট জায়গা দখল করে।
+
     printf("Size of int: %zu Bytes\n", sizeof(num));
     printf("Size of float: %zu Bytes\n", sizeof(f));
     printf("Size of double: %zu Bytes\n", sizeof(d));
