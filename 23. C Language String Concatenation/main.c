@@ -803,3 +803,145 @@ format: ফরম্যাট স্পেসিফায়ার (যেমন: %
 যখন ইউজারের ইনপুট থেকে কোনো স্ট্রিং তৈরি করছেন এবং আপনি নিশ্চিত নন ইনপুটটি কত বড় হবে।
 
 এমবেডেড সিস্টেম বা নেটওয়ার্ক প্রোগ্রামিংয়ে যেখানে মেমোরি ম্যানেজমেন্ট খুবই গুরুত্বপূর্ণ।
+
+স্ট্রিং কনক্যাটেনেশন (নিরাপদভাবে যুক্ত করা):
+#include <stdio.h>
+int main() {
+    char first_name[] = "Mohammad";
+    char last_name[] = "Arman";
+    char full_name[20]; // বাফার সাইজ ২০
+
+    // %s ব্যবহার করে দুটি স্ট্রিংকে যুক্ত করে full_name এ রাখা হচ্ছে
+    snprintf(full_name, sizeof(full_name), "%s %s", first_name, last_name);
+
+    printf("Full Name: %s\n", full_name);
+
+    return 0;
+}
+
+ডাটা ট্রাঙ্কেশন (Data Truncation) বা সুরক্ষা:
+
+#include <stdio.h>
+int main() {
+    char buffer[10]; // সাইজ মাত্র ১০
+    char secret_code[] = "ABC123456789";
+
+    // বাফার ১০ কিন্তু ডাটা ১২ অক্ষরের। snprintf শুধু ৯ অক্ষর নিবে + ১টি '\0'
+    snprintf(buffer, sizeof(buffer), "%s", secret_code);
+
+    printf("Buffer holds: %s\n", buffer); 
+    return 0;
+}
+
+রিটার্ন ভ্যালু ব্যবহার করা (অ্যাডভান্সড):
+snprintf() একটি ইন্টিজার রিটার্ন করে। এটি জানায় যে পূর্ণ স্ট্রিংটি তৈরি করতে মোট কত বাইট লাগত। এটি দিয়ে আপনি চেক করতে পারেন যে ডাটা কাটা পড়েছে কি না।
+
+#include <stdio.h>
+int main() {
+    char bio[15];
+    char name[] = "Arman";
+    int age = 22;
+
+    // snprintf এর রিটার্ন ভ্যালু n এ জমা রাখা হচ্ছে
+    int n = snprintf(bio, sizeof(bio), "Name:%s, Age:%d", name, age);
+
+    printf("Result: %s\n", bio);
+
+    // যদি n বাফারের সাইজের চেয়ে বড় বা সমান হয়, তারমানে ডাটা কাটা পড়েছে
+    if (n >= sizeof(bio)) {
+        printf("Warning: String was truncated! Needed %d bytes, but only have %zu.\n", n, sizeof(bio));
+    }
+
+    return 0;
+}
+
+ফাইল নেম বা পাথ (Path) তৈরি করা:
+
+#include <stdio.h>
+
+int main() {
+    char filename[50];
+    int user_id = 1005;
+
+    // user_1005.txt এই ফরম্যাটে নাম তৈরি করা
+    snprintf(filename, sizeof(filename), "logs/user_%d.txt", user_id);
+
+    printf("Generated File Path: %s\n", filename);
+
+    return 0;
+}
+
+1: Basic String Concat:
+
+#include <stdio.h>
+
+int main() {
+    char str1[] = "Hello";
+    char str2[] = "World";
+    char result[50];
+
+    snprintf(result, sizeof(result), "%s %s", str1, str2);
+
+    printf("%s", result);
+    return 0;
+}
+
+User Input সহ":
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char name[50];
+    char city[50];
+    char result[100];
+
+    printf("Enter your name: ");
+    fgets(name, sizeof(name), stdin);
+    name[strcspn(name, "\n")] = 0;
+
+    printf("Enter your city: ");
+    fgets(city, sizeof(city), stdin);
+    city[strcspn(city, "\n")] = 0;
+
+    snprintf(result, sizeof(result),
+             "My name is %s and I live in %s",
+             name, city);
+
+    printf("%s", result);
+
+    return 0;
+}
+
+Number + String Concat:
+
+#include <stdio.h>
+
+int main() {
+    char result[100];
+    int age = 22;
+
+    snprintf(result, sizeof(result),
+             "I am %d years old", age);
+
+    printf("%s", result);
+    return 0;
+}
+
+Buffer Overflow Control 🔥:
+
+#include <stdio.h>
+
+int main() {
+    char result[10];
+
+    snprintf(result, sizeof(result),
+             "Hello World");
+
+    printf("%s", result);
+    return 0;
+}
+
+✅ snprintf() সুবিধা:
+size limit আছে
+safe
+secure coding এ ব্যবহার হয়
