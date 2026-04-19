@@ -453,4 +453,90 @@ int main()
 
 
 
+#include <stdio.h>
+#include <stdbool.h>
 
+int main() {
+    printf("The world best book is: \"Al-Kuran\"\n");
+
+    // ভ্যারিয়েবল ডিক্লেয়ারেশন
+    char name[50], address[40], subject[40], bloodGroup[6], phone[22], gmail[45];
+    char grade;
+    bool married;
+    int age, temp;
+    float height, cgpa;
+    double accountBalance;
+
+    // --- ইনপুট সেকশন ---
+
+    printf("Enter your name (max 49 char): ");
+    scanf(" %49[^\n]", name);
+    while (getchar() != '\n'); // বাফার পরিষ্কার
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Enter your height: ");
+    scanf("%f", &height);
+    while (getchar() != '\n'); // float নেওয়ার পর বাফার পরিষ্কার জরুরি
+
+    printf("Enter your address (max 39 char): ");
+    scanf(" %39[^\n]", address);
+    while (getchar() != '\n');
+
+    printf("Enter your subject (max 39 char): ");
+    scanf(" %39[^\n]", subject);
+    while (getchar() != '\n');
+
+    printf("Enter your bloodGroup: ");
+    scanf(" %5[^\n]", bloodGroup);
+    while (getchar() != '\n');
+
+    printf("Enter your phone: ");
+    scanf(" %21[^\n]", phone);
+    while (getchar() != '\n');
+
+    printf("Enter your gmail: ");
+    scanf(" %44[^\n]", gmail);
+    while (getchar() != '\n');
+
+    printf("Enter your grade: ");
+    scanf(" %c", &grade);
+
+    printf("Enter your cgpa: ");
+    scanf("%f", &cgpa);
+
+    printf("Are you married (1 for Yes, 0 for No): ");
+    scanf("%d", &temp);
+    married = temp;
+    
+    printf("Enter your Account balance: ");
+    scanf("%lf", &accountBalance);
+
+    // --- আউটপুট সেকশন ---
+
+    printf("\n--------- Student Information --------\n");
+    printf("%-15s : %s\n", "Name", name);
+    printf("%-15s : %d years old\n", "Age", age);
+    printf("%-15s : %.1f\n", "Height", height);
+    printf("%-15s : %s\n", "Address", address);
+    printf("%-15s : %s\n", "Subject", subject);
+    printf("%-15s : %s\n", "Blood", bloodGroup);
+    printf("%-15s : %s\n", "Phone", phone);
+    printf("%-15s : %s\n", "Gmail", gmail);
+    printf("%-15s : %c\n", "Grade", grade);
+    printf("%-15s : %.2f\n", "Cgpa", cgpa);
+    printf("%-15s : %s\n", "Married", married ? "Yes" : "No");
+    printf("%-15s : %.2lf\n", "Account", accountBalance);
+    printf("--------------------------------------\n");
+
+    return 0;
+}
+
+
+
+স্মার্ট ইনপুট লিমিট:   %39[^\n] বা %21[^\n] ব্যবহার। নিয়ম হলো অ্যারের সাইজ যত, তার চেয়ে অন্তত ১ কম লিমিট দেওয়া (নাল ক্যারেক্টারের জন্য)।
+
+বাফার জট মুক্তি: প্রতিটি স্ট্রিং ইনপুটের পর while (getchar() != '\n'); ব্যবহারের ফলে ইউজার যদি লিমিটের চেয়ে বেশি টাইপ করে, তবে সেই বাড়তি অংশটুকু পরের ইনপুটে আর ডিস্টার্ব করবে না।
+
+পারফেক্ট আউটপুট: %s এর পরে \n দেওয়ায় এবং কোলনগুলোকে অ্যালাইন করায় আউটপুটটি এখন একটি ড্যাশবোর্ডের মতো দেখাচ্ছে।
