@@ -302,3 +302,91 @@ int main() {
 
     return 0;
 }
+
+Profesional 100% code.........................
+হ্যাঁ, ১০০%! যদি প্রতিবার scanf() ব্যবহার করার পর while (getchar() != '\n'); লুপটি ব্যবহার করা হয়, 
+তবে সেটাকে সি ল্যাঙ্গুয়েজের স্ট্যান্ডার্ড অনুযায়ী ১০০% প্রফেশনাল এবং নিরাপদ (Robust) কোড বলা যায়।
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main(){
+  char name[50], address[50], subject[50], phone[22], grade[5], gmail[50], bloodGroup[10];
+  char section;
+  bool married;
+  int age;
+  float height, cgpa;
+  double accountBalance;
+
+  printf("Enter your name: ");
+  fgets(name, sizeof(name), stdin);
+  name[strcspn(name, "\n")] = 0;
+
+  printf("Enter your age: ");
+  scanf("%d", &age);
+  while (getchar() != '\n'); // ফিক্স ১: বয়সের পর বাফার ক্লিয়ার
+
+  printf("Enter your height: ");
+  scanf("%f", &height);
+  while (getchar() != '\n'); // ফিক্স ২: হাইটের পর বাফার ক্লিয়ার
+
+  printf("Enter your address: ");
+  fgets(address, sizeof(address), stdin);
+  address[strcspn(address, "\n")] = 0;
+ 
+  printf("Enter your subject: ");
+  fgets(subject, sizeof(subject), stdin);
+  subject[strcspn(subject, "\n")] = 0;
+
+  printf("Enter your grade: ");
+  fgets(grade, sizeof(grade), stdin);
+  grade[strcspn(grade, "\n")] = 0;
+
+  printf("Enter your section: ");
+  scanf(" %c", &section);
+  while (getchar() != '\n');
+
+  printf("Enter your cgpa: ");
+  scanf("%f", &cgpa);
+  while (getchar() != '\n');
+
+  printf("Enter your gmail: ");
+  fgets(gmail, sizeof(gmail), stdin);
+  gmail[strcspn(gmail, "\n")] = 0;
+  
+  printf("Enter your bloodGroup: ");
+  fgets(bloodGroup, sizeof(bloodGroup), stdin);
+  bloodGroup[strcspn(bloodGroup, "\n")] = 0;
+
+  printf("Are you married: 1(yes) or 0 (No): ");
+  int temp;
+  scanf("%d", &temp);
+  married = temp;
+  while (getchar() != '\n'); 
+
+  printf("Enter account balance: ");
+  scanf("%lf", &accountBalance);
+  while (getchar() != '\n');
+
+  printf("Enter your phone: ");
+  fgets(phone, sizeof(phone), stdin);
+  phone[strcspn(phone, "\n")] = 0; // ফিক্স ৪: ফোনের নিউ-লাইন রিমুভ
+  
+  printf("\n----------Student Information-----------\n");
+
+  printf("%-15s : %s\n", "Name", name);
+  printf("%-15s : %d years old\n","Age", age);
+  printf("%-15s : %.1f feet\n", "Height", height);
+  printf("%-15s : %s\n", "Address", address );
+  printf("%-15s : %s\n", "Subject", subject);
+  printf("%-15s : %s\n", "Grade", grade);
+  printf("%-15s : %c\n", "Section", section);
+  printf("%-15s : %.2f\n", "Cgpa", cgpa);
+  printf("%-15s : %s\n", "Gmail", gmail);
+  printf("%-15s : %s\n", "Blood", bloodGroup);
+  printf("%-15s : %s\n", "Married", married ? "Yes" : "No");
+  printf("%-15s : $%.2lf\n", "Account", accountBalance);
+  printf("%-15s : %s\n", "Phone", phone);
+
+  return 0;
+}
