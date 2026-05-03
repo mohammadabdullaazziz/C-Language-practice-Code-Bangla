@@ -945,3 +945,30 @@ int main() {
 size limit আছে
 safe
 secure coding এ ব্যবহার হয়
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h> // strcspn এর জন্য এটি প্রয়োজন
+
+int main() {
+    char name[50];
+    int age;
+    char combined[100]; // জোড়া লাগানোর পর রাখার জন্য একটি বড় অ্যারে
+
+    printf("Enter your name: ");
+    fgets(name, sizeof(name), stdin);
+    name[strcspn(name, "\n")] = 0; // নিউ-লাইন ক্যারেক্টার সরানোর জন্য
+    
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("------------------\n");
+
+    // sprintf ব্যবহার করে name এবং age কনক্যাটিনেশন করা
+    // এটি name এবং age-কে একটি স্ট্রিং বানিয়ে 'combined' ভেরিয়েবলে রাখবে
+    sprintf(combined, "User: %s, Age: %d", name, age);
+
+    // ফলাফল প্রিন্ট করা
+    printf("Result: %s\n", combined);
+    
+    return 0;
+}
