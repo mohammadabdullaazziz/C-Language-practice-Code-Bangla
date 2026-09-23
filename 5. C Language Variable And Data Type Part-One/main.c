@@ -152,3 +152,213 @@ num2 এর ভেতর থাকা 20 মানটি num1 বক্সে �
 ৯. }
 
 সেকেন্ড ব্র্যাকেট ক্লোজ করার মাধ্যমে মেইন ফাংশন তথা পুরো প্রোগ্রামের কাজ এখানেই শেষ হলো।
+
+
+
+#include <stdio.h>
+
+int main() {
+    // ১. ১৫টি আইটেমের নাম ক্যারেক্টার অ্যারে (char array) দিয়ে আলাদা করে নিলাম
+    const char i1[]  = "Miniket Rice (5kg)";
+    const char i2[]  = "Mustard Oil (1L)";
+    const char i3[]  = "Masoor Dal (1kg)";
+    const char i4[]  = "Sugar (1kg)";
+    const char i5[]  = "Salt (1kg)";
+    const char i6[]  = "Rupchanda Oil (2L)";
+    const char i7[]  = "Aata (2kg)";
+    const char i8[]  = "Teaser Tea (400g)";
+    const char i9[]  = "Powder Milk (500g)";
+    const char i10[] = "Onion (1kg)";
+    const char i11[] = "Garlic (500g)";
+    const char i12[] = "Ginger (500g)";
+    const char i13[] = "Turmeric Powder";
+    const char i14[] = "Chili Powder";
+    const char i15[] = "Dish Wash Liquid";
+
+    // ২. ১৫টি আইটেমের দামও ক্যারেক্টার অ্যারে (char array) দিয়ে আলাদা করে নিলাম
+    const char p1[]  = "340.00 tk";
+    const char p2[]  = "220.00 tk";
+    const char p3[]  = "130.00 tk";
+    const char p4[]  = "115.00 tk";
+    const char p5[]  = "42.00 tk";
+    const char p6[]  = "330.00 tk";
+    const char p7[]  = "95.00 tk";
+    const char p8[]  = "125.00 tk";
+    const char p9[]  = "410.00 tk";
+    const char p10[] = "75.00 tk";
+    const char p11[] = "90.00 tk";
+    const char p12[] = "110.00 tk";
+    const char p13[] = "60.00 tk";
+    const char p14[] = "65.00 tk";
+    const char p15[] = "85.00 tk";
+
+    // ৩. আউটপুট প্রিন্ট
+    printf("Product Name              | Price\n");
+    printf("--------------------------------------\n");
+
+    printf("%-25s | %s\n", i1, p1);
+    printf("%-25s | %s\n", i2, p2);
+    printf("%-25s | %s\n", i3, p3);
+    printf("%-25s | %s\n", i4, p4);
+    printf("%-25s | %s\n", i5, p5);
+    printf("%-25s | %s\n", i6, p6);
+    printf("%-25s | %s\n", i7, p7);
+    printf("%-25s | %s\n", i8, p8);
+    printf("%-25s | %s\n", i9, p9);
+    printf("%-25s | %s\n", i10, p10);
+    printf("%-25s | %s\n", i11, p11);
+    printf("%-25s | %s\n", i12, p12);
+    printf("%-25s | %s\n", i13, p13);
+    printf("%-25s | %s\n", i14, p14);
+    printf("%-25s | %s\n", i15, p15);
+
+    printf("--------------------------------------\n");
+
+    return 0;
+}
+
+advanced
+
+#include <stdio.h>
+
+int main() {
+    // ১. ১৫টি আইটেমের নাম ভ্যারিয়েবলে আলাদা করে নিলাম
+    const char* i1  = "Miniket Rice (5kg)";
+    const char* i2  = "Mustard Oil (1L)";
+    const char* i3  = "Masoor Dal (1kg)";
+    const char* i4  = "Sugar (1kg)";
+    const char* i5  = "Salt (1kg)";
+    const char* i6  = "Rupchanda Oil (2L)";
+    const char* i7  = "Aata (2kg)";
+    const char* i8  = "Teaser Tea (400g)";
+    const char* i9  = "Powder Milk (500g)";
+    const char* i10 = "Onion (1kg)";
+    const char* i11 = "Garlic (500g)";
+    const char* i12 = "Ginger (500g)";
+    const char* i13 = "Turmeric Powder";
+    const char* i14 = "Chili Powder";
+    const char* i15 = "Dish Wash Liquid";
+
+    // ২. ১৫টি আইটেমের দামও আলাদা করে নিলাম
+    const char* p1  = "340.00 tk";
+    const char* p2  = "220.00 tk";
+    const char* p3  = "130.00 tk";
+    const char* p4  = "115.00 tk";
+    const char* p5  = "42.00 tk";
+    const char* p6  = "330.00 tk";
+    const char* p7  = "95.00 tk";
+    const char* p8  = "125.00 tk";
+    const char* p9  = "410.00 tk";
+    const char* p10 = "75.00 tk";
+    const char* p11 = "90.00 tk";
+    const char* p12 = "110.00 tk";
+    const char* p13 = "60.00 tk";
+    const char* p14 = "65.00 tk";
+    const char* p15 = "85.00 tk";
+
+    // ৩. আউটপুট প্রিন্ট
+    printf("Product Name              | Price\n");
+    printf("--------------------------------------\n");
+
+    printf("%-25s | %s\n", i1, p1);
+    printf("%-25s | %s\n", i2, p2);
+    printf("%-25s | %s\n", i3, p3);
+    printf("%-25s | %s\n", i4, p4);
+    printf("%-25s | %s\n", i5, p5);
+    printf("%-25s | %s\n", i6, p6);
+    printf("%-25s | %s\n", i7, p7);
+    printf("%-25s | %s\n", i8, p8);
+    printf("%-25s | %s\n", i9, p9);
+    printf("%-25s | %s\n", i10, p10);
+    printf("%-25s | %s\n", i11, p11);
+    printf("%-25s | %s\n", i12, p12);
+    printf("%-25s | %s\n", i13, p13);
+    printf("%-25s | %s\n", i14, p14);
+    printf("%-25s | %s\n", i15, p15);
+
+    printf("--------------------------------------\n");
+
+    return 0;
+}
+
+const char*: JavaScript-এর const এর মতো C ল্যাঙ্গুয়েজেও স্থায়ী টেক্সট ধরে রাখতে const char* ব্যবহার করা হয়।
+
+%-25s: এটি প্রডাক্টের নামকে বামে চেপে ২৫টি কলামের জায়গায় সুন্দরভাবে অ্যালাইন করে দেয়, ফলে টেবিল সোজা থাকে।
+
+
+#include <stdio.h>
+#include <string.h>
+
+// padEnd এর মতো ২৫ ঘরের মধ্যে বাকি জায়গায় ডট প্রিন্ট করার ফাংশন
+void print_padded_item(const char *item_name) {
+    printf("%s", item_name);
+    int len = strlen(item_name);
+    int dots_to_print = 25 - len;
+    
+    // ২৫ ঘর পূর্ণ করতে যতগুলো ডট প্রয়োজন তা প্রিন্ট করা
+    for (int i = 0; i < dots_to_print; i++) {
+        printf(".");
+    }
+}
+
+int main() {
+    // ১. ১৫টি আইটেমের নাম
+    const char *i1  = "Miniket Rice (5kg)";
+    const char *i2  = "Mustard Oil (1L)";
+    const char *i3  = "Masoor Dal (1kg)";
+    const char *i4  = "Sugar (1kg)";
+    const char *i5  = "Salt (1kg)";
+    const char *i6  = "Rupchanda Oil (2L)";
+    const char *i7  = "Aata (2kg)";
+    const char *i8  = "Teaser Tea (400g)";
+    const char *i9  = "Powder Milk (500g)";
+    const char *i10 = "Onion (1kg)";
+    const char *i11 = "Garlic (500g)";
+    const char *i12 = "Ginger (500g)";
+    const char *i13 = "Turmeric Powder";
+    const char *i14 = "Chili Powder";
+    const char *i15 = "Dish Wash Liquid";
+
+    // ২. ১৫টি আইটেমের দাম
+    const char *p1  = "340.00 tk";
+    const char *p2  = "220.00 tk";
+    const char *p3  = "130.00 tk";
+    const char *p4  = "115.00 tk";
+    const char *p5  = "42.00 tk";
+    const char *p6  = "330.00 tk";
+    const char *p7  = "95.00 tk";
+    const char *p8  = "125.00 tk";
+    const char *p9  = "410.00 tk";
+    const char *p10 = "75.00 tk";
+    const char *p11 = "90.00 tk";
+    const char *p12 = "110.00 tk";
+    const char *p13 = "60.00 tk";
+    const char *p14 = "65.00 tk";
+    const char *p15 = "85.00 tk";
+
+    // ৩. টেবিল প্রিন্ট করা
+    printf("Product Name              | Price\n");
+    printf("--------------------------------------\n");
+
+    print_padded_item(i1);  printf(" | %s\n", p1);
+    print_padded_item(i2);  printf(" | %s\n", p2);
+    print_padded_item(i3);  printf(" | %s\n", p3);
+    print_padded_item(i4);  printf(" | %s\n", p4);
+    print_padded_item(i5);  printf(" | %s\n", p5);
+    print_padded_item(i6);  printf(" | %s\n", p6);
+    print_padded_item(i7);  printf(" | %s\n", p7);
+    print_padded_item(i8);  printf(" | %s\n", p8);
+    print_padded_item(i9);  printf(" | %s\n", p9);
+    print_padded_item(i10); printf(" | %s\n", p10);
+    print_padded_item(i11); printf(" | %s\n", p11);
+    print_padded_item(i12); printf(" | %s\n", p12);
+    print_padded_item(i13); printf(" | %s\n", p13);
+    print_padded_item(i14); printf(" | %s\n", p14);
+    print_padded_item(i15); printf(" | %s\n", p15);
+
+    printf("--------------------------------------\n");
+
+    return 0;
+}
+
+
